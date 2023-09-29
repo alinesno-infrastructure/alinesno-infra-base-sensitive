@@ -2,8 +2,8 @@ package com.alinesno.infra.base.sensitive.api.controller;
 
 import com.alinesno.infra.base.sensitive.entity.SensitiveWordEntity;
 import com.alinesno.infra.base.sensitive.service.ISensitiveWordService;
-import com.alinesno.infra.common.core.rest.BaseController;
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.web.adapter.rest.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
