@@ -18,6 +18,18 @@ spring:
   devtools:
     restart:
       enabled: true
+      
+actable:
+  table:
+    auto: update
+  model:
+    pack: com.alinesno.infra.base.sensitive.entity;
+  database:
+    type: mysql
+  index:
+    prefix: alinesno_base_sensitive_idx_
+  unique:
+    prefix: alinesno_base_sensitive_uni_
 
 # sa-token配置
 sa-token:
