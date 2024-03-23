@@ -1,5 +1,5 @@
 {
-  "name": "alinesno-infra-base-sensitive-admin",
+  "name": "alinesno-infra-base-sensitive-ui",
   "version": "1.0.0",
   "description": "敏感词过滤服务",
   "author": "LuoXiaoDong",

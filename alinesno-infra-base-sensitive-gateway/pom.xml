@@ -10,7 +10,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>alinesno-infra-base-sensitive-api</artifactId>
+	<artifactId>alinesno-infra-base-sensitive-gateway</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>

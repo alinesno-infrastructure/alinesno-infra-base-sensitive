@@ -25,12 +25,12 @@
         <module>alinesno-infra-base-sensitive-facade</module>  <!-- 接口和引用 -->
         <module>alinesno-infra-base-sensitive-domain</module>  <!-- 领域服务 -->
         <module>alinesno-infra-base-sensitive-adapter</module> <!-- 适配层 -->
-        <module>alinesno-infra-base-sensitive-api</module>  <!-- 接口服务 -->
+        <module>alinesno-infra-base-sensitive-gateway</module>  <!-- 接口服务 -->
         <module>alinesno-infra-base-sensitive-client</module>  <!-- 对外引用 -->
         <module>alinesno-infra-base-sensitive-boot</module>  <!-- 启动服务 -->
 
         <!-- 前端服务
-        <module>alinesno-infra-base-sensitive-admin</module>
+        <module>alinesno-infra-base-sensitive-ui</module>
         -->
     </modules>
 
