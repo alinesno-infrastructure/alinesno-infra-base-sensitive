@@ -34,7 +34,7 @@ actable:
 # sa-token配置
 sa-token:
   token-name: satoken
-  host-path: http://alinesno-infra-base-sensitive-auth-application.beta.base.infra.linesno.com
+  host-path: http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com
   sso:
     auth-url: ${sa-token.host-path}/login
     is-http: true
