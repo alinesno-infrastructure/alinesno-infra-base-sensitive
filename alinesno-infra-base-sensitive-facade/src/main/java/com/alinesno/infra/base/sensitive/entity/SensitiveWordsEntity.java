@@ -8,6 +8,7 @@ import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
 import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
 import com.gitee.sunchenbin.mybatis.actable.constants.MySqlTypeConstant;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 
 /**
@@ -18,6 +19,7 @@ import lombok.Data;
  * @author LuoXiaoDong
  * @version 1.0.0
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("sensitive_words")
 public class SensitiveWordsEntity extends InfraBaseEntity {
