@@ -10,8 +10,8 @@ import java.util.*;
 @Service
 public class SensitiveWordFilterServiceImpl implements ISensitiveWordFilterService {
 
-    private List<String> sensitiveWords = new ArrayList<>();
-    private SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance().init();
+    private final List<String> sensitiveWords = new ArrayList<>();
+    private final SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance().init();
 
     @Override
     public boolean addSensitiveWord(String word) {
