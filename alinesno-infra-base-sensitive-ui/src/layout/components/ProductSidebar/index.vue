@@ -23,9 +23,10 @@ const router = useRouter();
 // 菜单列表
 const menuItems = ref([
   {id:'2' , icon:'fa-brands fa-slack' , link:'/base/sensitive/application/index' , desc:'应用管理'},
-  {id:'3' , icon:'fa-solid fa-list-check' , link:'/base/sensitive/word/index' , desc:'敏感词管理'},
+  {id:'3' , icon:'fa-solid fa-list-check' , link:'/base/sensitive/word/index' , desc:'词库管理'},
   {id:'4' , icon:'fa-solid fa-at' , link:'/base/sensitive/config/index' , desc:'自定义敏感词'},
-  {id:'7' , icon:'fa-solid fa-user-shield' , link:'/base/sensitive/filter/index' , desc:'过滤配置'}, 
+  {id:'9' , icon:'fa-solid fa-list-check' , link:'/base/sensitive/analyse/index' , desc:'统计分析'},
+  {id:'7' , icon:'fa-solid fa-user-shield' , link:'/base/sensitive/filter/index' , desc:'过滤配置'},
   {id:'8' , icon:'fa-solid fa-file-word' , link:'/base/sensitive/record/index' , desc:'请求日志'}, 
 ]);
 
