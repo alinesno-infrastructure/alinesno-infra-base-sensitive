@@ -1,8 +1,8 @@
 package com.alinesno.infra.base.sensitive.service.impl;
 
+import com.alinesno.infra.base.sensitive.config.SensitiveWordConfig;
 import com.alinesno.infra.base.sensitive.service.ISensitiveWordFilterService;
-import com.alinesno.infra.common.facade.response.AjaxResult;
-import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -11,7 +11,9 @@ import java.util.*;
 public class SensitiveWordFilterServiceImpl implements ISensitiveWordFilterService {
 
     private final List<String> sensitiveWords = new ArrayList<>();
-    private final SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance().init();
+
+    @Autowired
+    private SensitiveWordConfig sensitiveWordConfig;
 
     @Override
     public boolean addSensitiveWord(String word) {
@@ -47,28 +49,28 @@ public class SensitiveWordFilterServiceImpl implements ISensitiveWordFilterServi
 
     @Override
     public String filterText(String text) {
-        return sensitiveWordBs.replace(text);
+        return sensitiveWordConfig.sensitiveWordBs().replace(text);
     }
 
     @Override
     public List<String> filterTextBatch(List<String> textList) {
         List<String> filteredTextList = new ArrayList<>();
         for (String text : textList) {
-            filteredTextList.add(sensitiveWordBs.replace(text));
+            filteredTextList.add(sensitiveWordConfig.sensitiveWordBs().replace(text));
         }
         return filteredTextList;
     }
 
     @Override
     public List<String> detectSensitiveWords(String text) {
-        return sensitiveWordBs.findAll(text);
+        return sensitiveWordConfig.sensitiveWordBs().findAll(text);
     }
 
     @Override
     public List<List<String>> detectSensitiveWordsBatch(List<String> textList) {
         List<List<String>> detectedWordsList = new ArrayList<>();
         for (String text : textList) {
-            detectedWordsList.add(sensitiveWordBs.findAll(text));
+            detectedWordsList.add(sensitiveWordConfig.sensitiveWordBs().findAll(text));
         }
         return detectedWordsList;
     }

@@ -39,7 +39,12 @@ public class SensitiveWordsServiceImpl extends IBaseServiceImpl<SensitiveWordsEn
 	public boolean addSensitiveWord(String word) {
 		SensitiveConfigEntity sensitiveWord = new SensitiveConfigEntity();
 		sensitiveWord.setWord(word);
-		return sensitiveWordMapper.insert(sensitiveWord) > 0;
+
+		sensitiveWordMapper.insert(sensitiveWord) ;
+
+		refreshSensitiveWord() ;
+
+		return true ;
 	}
 
 	/**
@@ -52,7 +57,11 @@ public class SensitiveWordsServiceImpl extends IBaseServiceImpl<SensitiveWordsEn
 	public boolean deleteSensitiveWord(String word) {
 		QueryWrapper<SensitiveConfigEntity> queryWrapper = new QueryWrapper<>();
 		queryWrapper.eq("word", word);
-		return sensitiveWordMapper.delete(queryWrapper) > 0;
+		sensitiveWordMapper.delete(queryWrapper);
+
+		refreshSensitiveWord() ;
+
+		return true ;
 	}
 
 	/**
@@ -63,6 +72,11 @@ public class SensitiveWordsServiceImpl extends IBaseServiceImpl<SensitiveWordsEn
 	@Override
 	public List<SensitiveConfigEntity> getAllSensitiveWords() {
 		return sensitiveWordMapper.selectList(null);
+	}
+
+	@Override
+	public void refreshSensitiveWord() {
+
 	}
 
 }

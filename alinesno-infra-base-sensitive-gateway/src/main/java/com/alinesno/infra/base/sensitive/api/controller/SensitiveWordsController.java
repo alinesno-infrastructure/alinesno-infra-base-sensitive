@@ -75,6 +75,15 @@ public class SensitiveWordsController extends BaseController<SensitiveWordsEntit
     }
 
     /**
+     * 刷新敏感詞
+     * 可以优化为异步，甚至批量。
+     */
+    @GetMapping("/refreshSensitiveWord")
+    private void refreshSensitiveWord() {
+        service.refreshSensitiveWord();
+    }
+
+    /**
      * 获取SensitiveWordsEntity的DataTables数据。
      *
      * @param request HttpServletRequest对象。

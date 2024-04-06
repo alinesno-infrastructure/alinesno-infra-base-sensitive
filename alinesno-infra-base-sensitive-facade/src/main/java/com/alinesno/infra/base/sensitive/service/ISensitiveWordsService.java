@@ -39,4 +39,8 @@ public interface ISensitiveWordsService extends IBaseService<SensitiveWordsEntit
      */
     List<SensitiveConfigEntity> getAllSensitiveWords();
 
+    /**
+     * 刷新敏感词
+     */
+    void refreshSensitiveWord();
 }

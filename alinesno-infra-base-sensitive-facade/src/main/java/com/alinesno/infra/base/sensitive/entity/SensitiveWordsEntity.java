@@ -40,12 +40,19 @@ public class SensitiveWordsEntity extends InfraBaseEntity {
 	private String language;
 
 	/**
-	 * 创建时间
+	 * 类型
 	 */
-	@ColumnType(value = MySqlTypeConstant.DATETIME, length = 18)
-	@ColumnComment("创建时间")
-	@TableField("created_at")
-	private Date createdAt;
+	@ColumnType(length = 8)
+	@ColumnComment("类型")
+	@TableField("type")
+	private String type;
 
+	/**
+	 * 状态
+	 */
+	@ColumnType(length = 1)
+	@ColumnComment("状态")
+	@TableField("status")
+	private String status = "S";
 
 }
