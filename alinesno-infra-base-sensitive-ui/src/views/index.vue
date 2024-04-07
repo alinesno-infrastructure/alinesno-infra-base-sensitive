@@ -10,7 +10,7 @@
           <div class="icon">
             <div class="title">
                   {{ currentEnvClusterObj.appName }}
-              <div class="cluster-info">
+              <!-- <div class="cluster-info">
                 <span><i class="el-icon-monitor"></i>
                   {{ currentEnvClusterObj.clusterName }}
                 </span>
@@ -18,10 +18,10 @@
                   <i class="el-icon-link"></i>
                   应用地址: {{ currentEnvClusterObj.apiServerUrl }}
                 </span>
-              </div>
+              </div> -->
             </div>
             <div class="title-desc">
-              集群状态展示集群资源的概览和详情，您可以查看集群资源的监控数据和用量排行情况。
+              保护您的平台免受不良内容侵害，自动识别并屏蔽敏感词汇，维护用户健康网络环境
             </div>
           </div>
         </div>

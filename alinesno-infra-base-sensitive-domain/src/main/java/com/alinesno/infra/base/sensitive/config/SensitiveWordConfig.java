@@ -31,12 +31,12 @@ public class SensitiveWordConfig {
     @Bean
     public SensitiveWordBs sensitiveWordBs() {
 
-        return SensitiveWordBs.newInstance().init() ;
+//        return SensitiveWordBs.newInstance().init() ;
 
-//        return SensitiveWordBs.newInstance()
-//                .wordAllow(WordAllows.chains(WordAllows.defaults(), myDdWordAllow))
-//                .wordDeny(myDdWordDeny)
-//                .init();
+        return SensitiveWordBs.newInstance()
+                .wordAllow(WordAllows.chains(WordAllows.defaults(), myDdWordAllow))
+                .wordDeny(myDdWordDeny)
+                .init();
 
     }
 

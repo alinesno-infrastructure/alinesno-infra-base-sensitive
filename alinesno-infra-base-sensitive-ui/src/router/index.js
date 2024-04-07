@@ -93,6 +93,12 @@ export const constantRoutes = [
         meta: { title: '应用管理', icon: 'dashboard', affix: true }
       },
       {
+        path: '/base/sensitive/tags/index',
+        component: () => import('@/views/base/sensitive/tags/index'),
+        name: '/base/sensitive/tags/index',
+        meta: { title: '标签管理', icon: 'dashboard', affix: true }
+      },
+      {
         path: '/base/sensitive/word/index',
         component: () => import('@/views/base/sensitive/word/index'),
         name: '/base/sensitive/word/index',
@@ -103,6 +109,12 @@ export const constantRoutes = [
         component: () => import('@/views/base/sensitive/record/index'),
         name: '/base/sensitive/record/index',
         meta: { title: '请求日志', icon: 'dashboard', affix: true }
+      },
+      {
+        path: '/base/sensitive/analyse/index',
+        component: () => import('@/views/base/sensitive/analyse/index'),
+        name: '/base/sensitive/analyse/index',
+        meta: { title: '统计分析', icon: 'dashboard', affix: true }
       },
       {
         path: '/base/sensitive/config/index',

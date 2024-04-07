@@ -43,7 +43,11 @@ import TreeSelect from '@/components/TreeSelect'
 // 字典标签组件
 import DictTag from '@/components/DictTag'
 
+import * as echarts from 'echarts';//引入echarts
+
 const app = createApp(App)
+
+app.config.globalProperties.$echarts = echarts
 
 // 全局方法挂载
 app.config.globalProperties.useDict = useDict
