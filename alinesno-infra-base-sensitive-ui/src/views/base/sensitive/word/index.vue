@@ -31,7 +31,7 @@
                <right-toolbar v-model:showSearch="showSearch" @queryTable="getList" :columns="columns"></right-toolbar>
             </el-row>
 
-            <el-table v-loading="loading" :data="AccountOnlineList" @selection-change="handleSelectionChange">
+            <el-table v-loading="loading" :data="SensitiveWordsList" @selection-change="handleSelectionChange">
                <el-table-column type="selection" width="30" align="center" />
 
                <el-table-column label="头像" align="center" width="60" key="status">
@@ -91,10 +91,10 @@
                <el-table-column label="操作" align="center" width="200" class-name="small-padding fixed-width">
                   <template #default="scope">
                      <el-tooltip content="踢下线" placement="top">
-                        <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['system:AccountOnline:edit']">踢下线</el-button>
+                        <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['system:SensitiveWords:edit']">踢下线</el-button>
                      </el-tooltip>
                      <el-tooltip content="强制注销" placement="top">
-                        <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['system:AccountOnline:remove']">强制注销</el-button>
+                        <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['system:SensitiveWords:remove']">强制注销</el-button>
                      </el-tooltip>
                   </template>
                </el-table-column>
@@ -128,10 +128,10 @@
             <el-table-column label="操作" align="center" width="200" class-name="small-padding fixed-width">
                <template #default="scope">
                   <el-tooltip content="踢下线" placement="top">
-                     <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['system:AccountOnline:edit']">踢下线</el-button>
+                     <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['system:SensitiveWords:edit']">踢下线</el-button>
                   </el-tooltip>
                   <el-tooltip content="强制注销" placement="top">
-                     <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['system:AccountOnline:remove']">强制注销</el-button>
+                     <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['system:SensitiveWords:remove']">强制注销</el-button>
                   </el-tooltip>
                </template>
             </el-table-column>
@@ -150,21 +150,21 @@
    </div>
 </template>
 
-<script setup name="AccountOnline">
+<script setup name="SensitiveWords">
 
 import {
-   listAccountOnline,
-   delAccountOnline,
-   getAccountOnline,
-   updateAccountOnline,
-   addAccountOnline
-} from "@/api/base/sensitive/word";
+   listSensitiveWords,
+   delSensitiveWords,
+   getSensitiveWords,
+   updateSensitiveWords,
+   addSensitiveWords
+} from "@/api/base/sensitive/sensitive_words";
 
 const router = useRouter();
 const { proxy } = getCurrentInstance();
 
 // 定义变量
-const AccountOnlineList = ref([]);
+const SensitiveWordsList = ref([]);
 const open = ref(false);
 const loading = ref(true);
 const showSearch = ref(true);
@@ -224,9 +224,9 @@ const { queryParams, form, rules } = toRefs(data);
 /** 查询应用列表 */
 function getList() {
    loading.value = true;
-   listAccountOnline(proxy.addDateRange(queryParams.value, dateRange.value)).then(res => {
+   listSensitiveWords(proxy.addDateRange(queryParams.value, dateRange.value)).then(res => {
       loading.value = false;
-      AccountOnlineList.value = res.rows;
+      SensitiveWordsList.value = res.rows;
       total.value = res.total;
    });
 };
@@ -247,9 +247,9 @@ function resetQuery() {
 };
 /** 删除按钮操作 */
 function handleDelete(row) {
-   const AccountOnlineIds = row.id || ids.value;
-   proxy.$modal.confirm('是否确认删除应用编号为"' + AccountOnlineIds + '"的数据项？').then(function () {
-      return delAccountOnline(AccountOnlineIds);
+   const SensitiveWordsIds = row.id || ids.value;
+   proxy.$modal.confirm('是否确认删除应用编号为"' + SensitiveWordsIds + '"的数据项？').then(function () {
+      return delSensitiveWords(SensitiveWordsIds);
    }).then(() => {
       getList();
       proxy.$modal.msgSuccess("删除成功");
@@ -268,7 +268,7 @@ function reset() {
    form.value = {
       id: undefined,
       deptId: undefined,
-      AccountOnlineName: undefined,
+      SensitiveWordsName: undefined,
       nickName: undefined,
       password: undefined,
       phonenumber: undefined,
@@ -293,8 +293,8 @@ function handleClientList() {
 /** 修改按钮操作 */
 function handleUpdate(row) {
    reset();
-   const AccountOnlineId = row.id || ids.value;
-   getAccountOnline(AccountOnlineId).then(response => {
+   const SensitiveWordsId = row.id || ids.value;
+   getSensitiveWords(SensitiveWordsId).then(response => {
       form.value = response.data;
       open.value = true;
       title.value = "修改应用";
@@ -305,14 +305,14 @@ function handleUpdate(row) {
 function submitForm() {
    proxy.$refs["databaseRef"].validate(valid => {
       if (valid) {
-         if (form.value.AccountOnlineId != undefined) {
-            updateAccountOnline(form.value).then(response => {
+         if (form.value.SensitiveWordsId != undefined) {
+            updateSensitiveWords(form.value).then(response => {
                proxy.$modal.msgSuccess("修改成功");
                open.value = false;
                getList();
             });
          } else {
-            addAccountOnline(form.value).then(response => {
+            addSensitiveWords(form.value).then(response => {
                proxy.$modal.msgSuccess("新增成功");
                open.value = false;
                getList();

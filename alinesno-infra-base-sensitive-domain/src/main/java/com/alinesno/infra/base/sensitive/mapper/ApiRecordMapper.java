@@ -1,7 +1,9 @@
 package com.alinesno.infra.base.sensitive.mapper;
 
-import com.alinesno.infra.base.sensitive.entity.FilterLogsEntity;
+import com.alinesno.infra.base.sensitive.entity.ApiRecordEntity;
 import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -11,6 +13,6 @@ import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
  * @author LuoXiaoDong
  * @version 1.0.0
  */
-public interface FilterLogsMapper extends IBaseMapper<FilterLogsEntity> {
+public interface ApiRecordMapper extends IBaseMapper<ApiRecordEntity> {
 
 }

@@ -9,7 +9,7 @@ import { parseStrEmpty } from "@/utils/ruoyi";
  */
 
 // 接口配置项
-var prefix = '/api/infra/base/sensitive/application/' ;
+var prefix = '/api/infra/base/sensitive/word_tags/' ;
 var managerUrl = {
     datatables : prefix +"datatables" ,
     createUrl: prefix + 'add' ,
@@ -25,7 +25,7 @@ var managerUrl = {
 }
 
 // 查询数据库列表
-export function listApplication(query) {
+export function listWordTags(query) {
   return request({
     url: managerUrl.datatables ,
     method: 'post',
@@ -34,7 +34,7 @@ export function listApplication(query) {
 }
 
 // 查询数据库详细
-export function getApplication(databaseId) {
+export function getWordTags(databaseId) {
   return request({
     url: managerUrl.detailUrl + '/' + parseStrEmpty(databaseId),
     method: 'get'
@@ -42,7 +42,7 @@ export function getApplication(databaseId) {
 }
 
 // 新增数据库
-export function addApplication(data) {
+export function addWordTags(data) {
   return request({
     url: managerUrl.saveUrl ,
     method: 'post',
@@ -51,7 +51,7 @@ export function addApplication(data) {
 }
 
 // 修改数据库
-export function updateApplication(data) {
+export function updateWordTags(data) {
   return request({
     url: managerUrl.updateUrl ,
     method: 'put',
@@ -60,7 +60,7 @@ export function updateApplication(data) {
 }
 
 // 删除数据库
-export function delApplication(databaseId) {
+export function delWordTags(databaseId) {
   return request({
     url: managerUrl.removeUrl + '/' + parseStrEmpty(databaseId),
     method: 'delete'

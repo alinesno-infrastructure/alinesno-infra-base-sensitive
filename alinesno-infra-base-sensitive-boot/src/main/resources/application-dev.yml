@@ -23,7 +23,7 @@ actable:
   table:
     auto: update
   model:
-    pack: com.alinesno.infra.base.sensitive.entity;
+    pack: com.alinesno.infra.base.sensitive.entity
   database:
     type: mysql
   index:

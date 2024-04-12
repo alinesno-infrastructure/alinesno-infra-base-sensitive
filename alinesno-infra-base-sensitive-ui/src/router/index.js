@@ -105,9 +105,9 @@ export const constantRoutes = [
         meta: { title: '敏感词管理', icon: 'dashboard', affix: true }
       },
       {
-        path: '/base/sensitive/record/index',
-        component: () => import('@/views/base/sensitive/record/index'),
-        name: '/base/sensitive/record/index',
+        path: '/base/sensitive/apiRecord/index',
+        component: () => import('@/views/base/sensitive/apiRecord/index'),
+        name: '/base/sensitive/apiRecord/index',
         meta: { title: '请求日志', icon: 'dashboard', affix: true }
       },
       {

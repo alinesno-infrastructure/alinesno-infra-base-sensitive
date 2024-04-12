@@ -1,6 +1,9 @@
 package com.alinesno.infra.base.sensitive.service.impl;
 
-import com.alinesno.infra.base.sensitive.service.IWordTag;
+import com.alinesno.infra.base.sensitive.entity.WordTagsEntity;
+import com.alinesno.infra.base.sensitive.mapper.WordTagsMapper;
+import com.alinesno.infra.base.sensitive.service.IWordTagService;
+import com.alinesno.infra.common.core.service.impl.IBaseServiceImpl;
 import com.github.houbb.sensitive.word.core.SensitiveWordHelper;
 import com.github.houbb.sensitive.word.support.result.WordResultHandlers;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +17,7 @@ import java.util.Set;
  */
 @Slf4j
 @Service
-public class WordTagImpl implements IWordTag {
+public class WordTagServiceImpl extends IBaseServiceImpl<WordTagsEntity, WordTagsMapper> implements IWordTagService {
 
     @Override
     public Set<String> getTag(String word) {

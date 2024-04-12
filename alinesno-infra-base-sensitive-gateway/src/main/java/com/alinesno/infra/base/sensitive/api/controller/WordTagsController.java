@@ -1,16 +1,15 @@
 package com.alinesno.infra.base.sensitive.api.controller;
 
-import com.alinesno.infra.base.sensitive.entity.FilterLogsEntity;
-import com.alinesno.infra.base.sensitive.service.IFilterLogsService;
+import com.alinesno.infra.base.sensitive.entity.WordTagsEntity;
+import com.alinesno.infra.base.sensitive.service.IWordTagService;
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.pageable.DatatablesPageBean;
 import com.alinesno.infra.common.facade.pageable.TableDataInfo;
 import com.alinesno.infra.common.web.adapter.rest.BaseController;
 import io.swagger.annotations.Api;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.ui.Model;
@@ -20,26 +19,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 处理与FilterLogsEntity相关的请求的Controller。
- * 继承自BaseController类并实现IFilterLogsService接口。
+ * 处理与TagsEntity相关的请求的Controller。
+ * 继承自BaseController类并实现ITagsService接口。
  *
  * @author LuoXiaoDong
  * @version 1.0.0
  */
-@Api(tags = "FilterLogs")
+@Slf4j
+@Api(tags = "Tags")
 @RestController
 @Scope(SpringInstanceScope.PROTOTYPE)
-@RequestMapping("/api/infra/base/sensitive/filter_logs")
-public class FilterLogsController extends BaseController<FilterLogsEntity, IFilterLogsService> {
-
-    // 日志记录
-    private static final Logger log = LoggerFactory.getLogger(FilterLogsController.class);
+@RequestMapping("/api/infra/base/sensitive/word_tags")
+public class WordTagsController extends BaseController<WordTagsEntity, IWordTagService> {
 
     @Autowired
-    private IFilterLogsService service;
+    private IWordTagService service;
 
     /**
-     * 获取FilterLogsEntity的DataTables数据。
+     * 获取TagsEntity的DataTables数据。
      *
      * @param request HttpServletRequest对象。
      * @param model   Model对象。
@@ -54,7 +51,7 @@ public class FilterLogsController extends BaseController<FilterLogsEntity, IFilt
     }
 
     @Override
-    public IFilterLogsService getFeign() {
+    public IWordTagService getFeign() {
         return this.service;
     }
 }

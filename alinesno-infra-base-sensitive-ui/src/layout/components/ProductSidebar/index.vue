@@ -28,7 +28,7 @@ const menuItems = ref([
   {id:'14' , icon:'fa-solid fa-at' , link:'/base/sensitive/config/index' , desc:'系统配置'},
   {id:'9' , icon:'fa-solid fa-list-check' , link:'/base/sensitive/analyse/index' , desc:'统计分析'},
   {id:'7' , icon:'fa-solid fa-user-shield' , link:'/base/sensitive/filter/index' , desc:'过滤配置'},
-  {id:'8' , icon:'fa-solid fa-file-word' , link:'/base/sensitive/record/index' , desc:'请求日志'}, 
+  {id:'8' , icon:'fa-solid fa-file-word' , link:'/base/sensitive/apiRecord/index' , desc:'请求日志'}, 
 ]);
 
 // 打开服务市场
