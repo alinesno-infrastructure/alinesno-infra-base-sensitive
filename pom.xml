@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
 
     <groupId>com.alinesno.infra.base</groupId>
-    <artifactId>alinesno-infra-base-sensitive-parent</artifactId>
+    <artifactId>alinesno-infra-base-sensitive</artifactId>
     <version>${revision}</version>
 
     <properties>
