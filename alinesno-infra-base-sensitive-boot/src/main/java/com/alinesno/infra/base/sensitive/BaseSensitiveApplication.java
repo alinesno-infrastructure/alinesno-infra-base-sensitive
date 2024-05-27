@@ -21,7 +21,6 @@ public class BaseSensitiveApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BaseSensitiveApplication.class, args);
-		return;
 	}
 
 	@Bean
