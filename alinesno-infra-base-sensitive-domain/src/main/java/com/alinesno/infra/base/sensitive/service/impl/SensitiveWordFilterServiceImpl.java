@@ -12,7 +12,7 @@ public class SensitiveWordFilterServiceImpl implements ISensitiveWordFilterServi
 
     private final List<String> sensitiveWords = new ArrayList<>();
 
-    @Autowired
+//    @Autowired
     private SensitiveWordConfig sensitiveWordConfig;
 
     @Override
