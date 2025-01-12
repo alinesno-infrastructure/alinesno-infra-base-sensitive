@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SensitiveWordService {
 
-    @Autowired
+//    @Autowired
     private SensitiveWordBs sensitiveWordBs;
 
     /**
